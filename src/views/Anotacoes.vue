@@ -15,7 +15,7 @@
             v-model="texto">
         </textarea>
       </div>
-      <button type="submit">Salvar</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Salvar</button>
     </form>
     <br>
     <table class="table table-striped">
