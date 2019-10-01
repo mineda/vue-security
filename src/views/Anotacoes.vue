@@ -19,20 +19,24 @@
     </form>
     <br>
     <table class="table table-striped">
-      <tr>
-        <th>Id</th>
-        <th>Assunto</th>
-        <th>Texto</th>
-        <th>Data/hora</th>
-        <th>Usuário</th>
-      </tr>
-      <tr v-for="ant in anotacoes" :key="ant.id">
-        <td>{{ ant.id }}</td>
-        <td>{{ ant.assunto }}</td>
-        <td>{{ ant.texto }}</td>
-        <td>{{ ant.dataHora }}</td>
-        <td>{{ ant.usuario.nome }}</td>
-      </tr>
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Assunto</th>
+          <th>Texto</th>
+          <th>Data/hora</th>
+          <th>Usuário</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="ant in anotacoes" :key="ant.id">
+          <td>{{ ant.id }}</td>
+          <td>{{ ant.assunto }}</td>
+          <td>{{ ant.texto }}</td>
+          <td>{{ ant.dataHora }}</td>
+          <td>{{ ant.usuario.nome }}</td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </template>
@@ -64,9 +68,10 @@ export default {
             usuario: this.usuario
           })
         .then(res => {
-          this.assunto = ''
-          this.texto = ''
-          this.atualizar()
+          console.log(res);
+          this.assunto = '';
+          this.texto = '';
+          this.atualizar();
         })
         .catch(error => console.log(error))
     },
